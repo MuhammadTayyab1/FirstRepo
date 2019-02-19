@@ -1,0 +1,353 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication113
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string user = "";
+
+            string a1 = "", a2 = "", a3 = "", a4 = "", a5 = "";
+
+            string b1 = "";
+
+            string c1 = "", c2 = "",c3="",c4="";
+
+            string d1 = "", d2 = "";
+
+            string h1 = "";
+
+            string i1 = "", i2 = "", i3 = "";
+
+            string k1 = "", k2 = "";
+
+
+            string t1 = "", t2 = "";
+
+
+            //   user instructions 
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("                            Welcome new user             \n");
+            Console.WriteLine("                   Please read instructions carefully \n\n");
+            Console.WriteLine("        1) you can only use panel 0 to 11 to draw your alphabet");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("                        _________________");
+            Console.WriteLine("                       " + "|  0  |  1  |  2  |");
+            Console.WriteLine("                       |-----|-----|-----|");
+            Console.WriteLine("                       " + "|  3  |  4  |  5  |");
+            Console.WriteLine("                       |-----|-----|-----|");
+            Console.WriteLine("                       " + "|  6  |  7  |  8  |");
+            Console.WriteLine("                       |-----|-----|-----|");
+            Console.WriteLine("                       " + "|  9  | 10  | 11  |");
+            Console.WriteLine("\n");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("         2) you only can type star ( * ) or space (  ) to fill these panel");
+            Console.WriteLine("              for example for draw A fill panel like this \n");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("                        _________________");
+            Console.WriteLine("                       " + "|     |  *  |     |");
+            Console.WriteLine("                       |-----|-----|-----|");
+            Console.WriteLine("                       " + "|  *  |     |  *  |");
+            Console.WriteLine("                       |-----|-----|-----|");
+            Console.WriteLine("                       " + "|  *  |  *  |  *  |");
+            Console.WriteLine("                       |-----|-----|-----|");
+            Console.WriteLine("                       " + "|  *  |     |  *  |");
+            Console.WriteLine("\n");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("       must confirm before process detection that all panel have");
+            Console.WriteLine("                * and space at the place of 0 to 11");
+            Console.WriteLine("                        Hope you will enjoy");
+            Console.WriteLine("                press enter to continue.....................");
+            Console.ReadLine();
+            Console.Clear();
+
+            Console.ForegroundColor = ConsoleColor.White;
+
+
+            // value store from 0 to 11 
+
+            int k = 0;
+            string[,] UA = new string[4, 3];
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+
+                    UA[i, j] = "" + k;
+                    k++;
+
+                }
+            }
+
+
+            // starting panel 
+
+            Console.WriteLine("\n");
+            Console.WriteLine("\n");
+            Console.WriteLine("             __________________________");
+            Console.WriteLine("            |        |        |        |");
+            Console.WriteLine("            |   {0}    |    {1}   |   {2}    |", UA[0, 0], UA[0, 1], UA[0, 2]);
+            Console.WriteLine("            |________|________|________|");
+            Console.WriteLine("            |        |        |        |");
+            Console.WriteLine("            |   {0}    |    {1}   |   {2}    | ", UA[1, 0], UA[1, 1], UA[1, 2]);
+            Console.WriteLine("            |________|________|________|");
+            Console.WriteLine("            |        |        |        |");
+            Console.WriteLine("            |   {0}    |    {1}   |   {2}    |  ", UA[2, 0], UA[2, 1], UA[2, 2]);
+            Console.WriteLine("            |________|________|________|");
+            Console.WriteLine("            |        |        |        |");
+            Console.WriteLine("            |   {0}    |    {1}  |   {2}   |", UA[3, 0], UA[3, 1], UA[3, 2]);
+            Console.WriteLine("            |________|________|________|");
+
+
+            // user input pannel from 0 to 11 position 
+
+            int userposition = 0;
+
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    Console.WriteLine("\n");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("enter space or * on position " + userposition);
+                    string save = Console.ReadLine();
+                    if (save == "*" || save == " ")
+                    {
+                        UA[i, j] = save;
+                        Console.Clear();
+
+
+                        Console.WriteLine("\n");
+                        Console.WriteLine("\n");
+                        Console.WriteLine("             __________________________");
+                        Console.WriteLine("            |        |        |        |");
+                        Console.WriteLine("            |   {0}    |    {1}   |   {2}    |", UA[0, 0], UA[0, 1], UA[0, 2]);
+                        Console.WriteLine("            |________|________|________|");
+                        Console.WriteLine("            |        |        |        |");
+                        Console.WriteLine("            |   {0}    |    {1}   |   {2}    | ", UA[1, 0], UA[1, 1], UA[1, 2]);
+                        Console.WriteLine("            |________|________|________|");
+                        Console.WriteLine("            |        |        |        |");
+                        Console.WriteLine("            |   {0}    |    {1}   |   {2}    |  ", UA[2, 0], UA[2, 1], UA[2, 2]);
+                        Console.WriteLine("            |________|________|________|");
+                        Console.WriteLine("            |        |        |        |");
+                        Console.WriteLine("            |   {0}    |    {1}  |   {2}   |", UA[3, 0], UA[3, 1], UA[3, 2]);
+                        Console.WriteLine("            |________|________|________|");
+
+                        userposition += 1;
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("\n\n              1 ) You can only type * and space button");
+                        Console.WriteLine("              2 ) only press * or space single time ");
+                        Console.WriteLine("              3 ) other keys not allow");
+                        Console.WriteLine("              4 ) Please restart the program");
+
+
+                    }
+
+                }
+            }
+
+
+            // user structure store in single string name "user"
+
+
+
+            user += ("  " + UA[0, 0] + "   " + UA[0, 1] + "   " + UA[0, 2] + "\n");
+            user += ("  " + UA[1, 0] + "   " + UA[1, 1] + "   " + UA[1, 2] + "\n");
+            user += ("  " + UA[2, 0] + "   " + UA[2, 1] + "   " + UA[2, 2] + "\n");
+            user += ("  " + UA[3, 0] + "   " + UA[3, 1] + "   " + UA[3, 2]);
+
+
+
+            Console.ReadLine();
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Character dectection is in process press enter to see result");
+            Console.WriteLine("\n");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("your given character is \n" + user);
+
+
+            // saved structures of alphabets from A to Z 
+
+            a1 += ("      *    \n");
+            a1 += ("  *       *\n");
+            a1 += ("  *   *   *\n");
+            a1 += ("  *       *");
+
+            a2 += ("      *    \n");
+            a2 += ("  *   *   *\n");
+            a2 += ("  *   *   *\n");
+            a2 += ("  *       *");
+
+            a3 += ("      *    \n");
+            a3 += ("           \n");
+            a3 += ("  *   *   *\n");
+            a3 += ("  *       *");
+
+            a4 += ("           \n");
+            a4 += ("      *    \n");
+            a4 += ("  *   *   *\n");
+            a4 += ("  *       *");
+
+            a5 += ("      *    \n");
+            a5 += ("  *   *   *\n");
+            a5 += ("  *       *\n");
+            a5 += ("  *       *");
+
+
+            b1 += ("  *        \n");
+            b1 += ("  *        \n");
+            b1 += ("  *   *   *\n");
+            b1 += ("  *   *   *");
+
+            c1 += ("  *   *   *\n");
+            c1 += ("  *        \n");
+            c1 += ("  *        \n");
+            c1 += ("  *   *   *");
+
+            c2 += ("  *   *   *\n");
+            c2 += ("  *        \n");
+            c2 += ("  *   *   *\n");
+            c2 += ("           ");
+
+            c3 += ("      *   *\n");
+            c3 += ("  *        \n");
+            c3 += ("  *        \n");
+            c3 += ("      *   *");
+
+            c4 += ("           \n");
+            c4 += ("  *   *   *\n");
+            c4 += ("  *        \n");
+            c4 += ("  *   *   *");
+
+            d1 += ("  *   *    \n");
+            d1 += ("  *       *\n");
+            d1 += ("  *       *\n");
+            d1 += ("  *   *    ");
+
+            d2 += ("          *\n");
+            d2 += ("          *\n");
+            d2 += ("  *   *   *\n");
+            d2 += ("  *   *   *");
+
+
+            i1 += ("  *   *   *\n");
+            i1 += ("      *    \n");
+            i1 += ("      *    \n");
+            i1 += ("  *   *   *");
+
+            i2 += ("      *    \n");
+            i2 += ("      *    \n");
+            i2 += ("      *    \n");
+            i2 += ("      *    ");
+
+            i3 += ("      *    \n");
+            i3 += ("           \n");
+            i3 += ("      *    \n");
+            i3 += ("      *    ");
+
+
+
+            k1 += ("  *       *\n");
+            k1 += ("  *   *    \n");
+            k1 += ("  *   *    \n");
+            k1 += ("  *       *");
+
+            k2 += ("  *        \n");
+            k2 += ("  *       *\n");
+            k2 += ("  *   *    \n");
+            k2 += ("  *       *");
+
+            h1 += ("  *       *\n");
+            h1 += ("  *   *   *\n");
+            h1 += ("  *   *   *\n");
+            h1 += ("  *       *");
+
+
+
+            t1 += ("  *   *   *\n");
+            t1 += ("      *    \n");
+            t1 += ("      *    \n");
+            t1 += ("      *    ");
+
+            t2 += ("  *   *   *\n");
+            t2 += ("  *   *   *\n");
+            t2 += ("      *    \n");
+            t2 += ("      *    ");
+
+
+
+            // checking result of given structure 
+
+
+            Console.ReadLine();
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            if (a1 == user || a2 == user || a3 == user || a4 == user || a5 == user)
+            {
+                Console.WriteLine("\n \n \n \n             A   is sucessfully detected     \n\n\n\n");
+            }
+
+            else if (b1 == user)
+            {
+                Console.WriteLine("\n \n \n \n          B   is sucessfully dectected    \n\n\n\n");
+            }
+
+            else if (c1 == user || c2 == user || c3==user ||c4==user)
+            {
+                Console.WriteLine("\n \n \n \n          C   is sucessfully dectected    \n\n\n\n");
+            }
+
+            else if (d1==user || d2==user)
+            {
+                Console.WriteLine("\n \n \n \n          D   is sucessfully dectected    \n\n\n\n");
+            }
+
+
+
+
+            else if (h1 == user)
+            {
+                Console.WriteLine("\n \n \n \n          H   is sucessfully dectected    \n\n\n\n");
+            }
+
+
+
+            else if (i1 == user || i2 == user || i3 == user)
+            {
+                Console.WriteLine("\n \n \n \n          I   is sucessfully dectected    \n\n\n\n");
+            }
+
+
+
+
+            else if (k1 == user || k2 == user)
+            {
+                Console.WriteLine("\n \n \n \n          K   is sucessfully dectected    \n\n\n\n");
+            }
+
+
+
+            else if (t1 == user || t2 == user)
+            {
+                Console.WriteLine("\n  \n \n  \n            T  is sucessfully detected      \n\n\n");
+            }
+
+
+            else
+            {
+                Console.WriteLine("Please try to draw correct structure of alphabhet");
+            }
+
+        }
+    }
+}
