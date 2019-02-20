@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LearningDestructorInInheritance
+{
+    class A
+    {
+        ~A() { Console.WriteLine("A"); }
+    }
+    class B : A
+    {
+        ~B() { Console.WriteLine("B"); }
+    }
+    class C : B
+    {
+        ~C() { Console.WriteLine("C"); }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            C obj = new C();
+        }
+    }
+}
